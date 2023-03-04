@@ -5,15 +5,24 @@ import Home from "./pages/Home"
 import Call from "./pages/Call"
 import About from "./pages/About"
 import Send from "./pages/Send"
-// header
+
 import Header from './components/Header';
+import NavBar from './components/NavBar';
+import { useState } from 'react';
 
+function App(){
 
-function App() {
+  const[navbar, setNavbar] = useState(false);
+
+  const toggleNavbar = () => {
+    setNavbar((prevState) => !prevState)
+  }
+
   return (
     <div className="App">
       <div>
-        <Header/>
+        <Header openNavbar = {toggleNavbar}/>
+        <NavBar navbar = {navbar} />
       </div>
       <Routes>
         <Route path="/" element={ <Home/> } />
