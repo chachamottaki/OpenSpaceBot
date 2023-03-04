@@ -21,7 +21,7 @@
 }
 
 .navbar li:hover{
-    background-color:#E0BBE4 ;
+    background-color:#301934 ;
 
 }
 
@@ -32,3 +32,13 @@
 .icon {
     position: relative;
 }
+
+.link {
+  
+    color: #FFF;
+    text-decoration:"none" !important
+      
+}
+.link:hover {
+    color: white
+ }
