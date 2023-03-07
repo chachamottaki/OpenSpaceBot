@@ -14,3 +14,13 @@ body {
     padding: 1rem;
     gap: 1rem;
 }
+
+.bot-state {
+    position: absolute;
+    left: 15%
+    
+}
+.battery-state {
+    position: absolute;
+    right: 2%;
+}
