@@ -4,5 +4,6 @@ As part of the advanced embedded systems course, we are building a small deliver
 to start app:
 1) clone repository
 2) cd OpenSpaceBot/mailbot
-3) npm start
+3) npm install
+4)npm start
 
