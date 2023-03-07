@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
 
-    <div style={{border: '1px solid black', padding: '20px'}}>
+    <div style={{border: '3px solid #02ADF7'}}>
       <br></br>
       <br></br>
       Mailing robot <br></br>
