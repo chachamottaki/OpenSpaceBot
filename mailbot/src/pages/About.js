@@ -8,7 +8,12 @@ function About() {
       <br></br>
       Mailing robot <br></br>
       Usefull in a coworking spaces and spacious companies <br></br>
-      Capable of XXXXXXX <br></br>
+      Capable of: <br></br>
+      following a path <br></br>
+      moving between desks<br></br> 
+      supporting 1kg of mail <br></br>
+      detecting obstacles<br></br>
+
       <br></br>
       <br></br>
 
