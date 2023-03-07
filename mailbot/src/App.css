@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+/* home page */
 .center-container{
   display:flex;
   flex-direction:row;
@@ -44,6 +45,26 @@ h1{
 .link {
   color: #FFF;
   text-decoration:"none" !important 
+}
+
+
+/* call page */
+
+.callpage-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.callbutton {
+  background-color: #1e5d88;
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: 3px solid #1e5d88;
+  border-radius: 15px;
 }
 
 
