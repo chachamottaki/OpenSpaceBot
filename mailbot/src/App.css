@@ -1,6 +1,43 @@
 .App {
   text-align: center;
 }
+.center-container{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+}
+.homepage-container-1 {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.homepage-item {
+  width: 50px;
+  margin: 10px;
+  border: 3px solid #1e5d88;
+  border-radius: 10px;
+  background-color: #1e5d88;
+  color: white
+}
+.homepage-item-1{
+  min-height: 20px;
+}
+.homepage-item-2{
+  min-height: 20px;
+}
+.homepage-item-3{
+  min-height: 20px;
+}
+
+h1{
+  color: #1e5d88;
+}
+
+.link {
+  color: #FFF;
+  text-decoration:"none" !important 
+}
+
 
 .App-logo {
   height: 40vmin;
