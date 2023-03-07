@@ -11,17 +11,17 @@ function Home() {
         <div className = "homepage-container-1">
           <div className = "homepage-item homepage-item-1">
             <Link to="/call" className='link'>
-              call
+              Call
             </Link>
           </div>
           <div className = "homepage-item homepage-item-2">
             <Link to="/send" className='link'>
-              send
+              Send
             </Link>
           </div>
           <div className = "homepage-item homepage-item-3">
             <Link to="/about" className='link'>
-              about
+              About
             </Link>
           </div>
 
