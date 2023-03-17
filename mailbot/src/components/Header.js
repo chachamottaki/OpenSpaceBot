@@ -9,6 +9,10 @@ function Header({openNavbar}) {
           <MenuLineIcon color="#fff" />
         </div>
         <div className='title'> Mailing Robot </div>
+
+        <div className='bot-state'> STATE : xxxxxx </div>
+        <div className='battery-state'> Battery : xx%</div>
+
     </div>
   )
 }

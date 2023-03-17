@@ -11,8 +11,9 @@ function NavBar({navbar}) {
     <div className= {navbar?"navbar navbar--open":"navbar"}>
         <Link to="/" className="link"><li><HomeLineIcon className='icon' /> Home</li></Link>
         <Link to="call" className="link"><li><PhoneLineIcon className='icon' /> Call</li></Link>
-        <Link to="about" className="link"><li><SendPlaneFillIcon className='icon' /> Send</li></Link>
-        <Link to="send" className="link"><li><QuestionnaireFillIcon className='icon' /> About</li></Link>
+
+        <Link to="send" className="link"><li><SendPlaneFillIcon className='icon' /> Send</li></Link>
+        <Link to="about" className="link"><li><QuestionnaireFillIcon className='icon' /> About</li></Link>
     </div>
   )
 }
