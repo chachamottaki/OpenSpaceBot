@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import '.././App.css'
 import axios from "axios"
-const baseUrl = "http://172.17.4.33:8000"
+const baseUrl = "http://172.17.4.73:8000"
 function Call() {
-  const[led,setValue] = useState(0)
+  const[desk,setValue] = useState(0)
   const handleChange = (event) => {
     setValue(event.target.value)
   }
   function CallFunction(){
-    const body = {Led: led}
+    const body = {Desk: desk}
     axios.post(baseUrl,body)
       .then(res=> console.log(res))
   }
@@ -19,12 +19,12 @@ function Call() {
         <form className='callpage-container'>
           <label>
             Insert your desk number to call the MailBot:<br></br>
-            <input type="text" name ="Led" onChange={handleChange}/>
+            <input type="text" name ="Desk" onChange={handleChange}/>
           </label>
           <br></br>
         </form>
       </div>
-      <button value="OKOK" className='callbutton' onClick={CallFunction}>Call Mailbot</button>
+      <button value="Call" className='callbutton' onClick={CallFunction}>Call Mailbot</button>
     </div>
   )
 }
