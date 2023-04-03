@@ -18,8 +18,11 @@ body {
 
 .bot-state {
     position: absolute;
-    left: 45%
-    
+    left: 35%
+}
+.bot-location {
+    position: absolute;
+    left: 55%
 }
 .battery-state {
     position: absolute;
