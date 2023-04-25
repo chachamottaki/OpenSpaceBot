@@ -15,7 +15,7 @@ function App(){
   useEffect(() => {
     const intervalId = setInterval(() => {
       window.location.reload();
-    }, 3000); // Refresh the page every 5 seconds
+    }, 3000); // Refresh the page every 3 seconds
 
     return () => clearInterval(intervalId); // Clear interval on unmount
   }, []);
