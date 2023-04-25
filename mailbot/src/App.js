@@ -8,16 +8,24 @@ import Send from "./pages/Send"
 
 import Header from './components/Header';
 import NavBar from './components/NavBar';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App(){
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      window.location.reload();
+    }, 3000); // Refresh the page every 5 seconds
+
+    return () => clearInterval(intervalId); // Clear interval on unmount
+  }, []);
 
   const[navbar, setNavbar] = useState(false);
 
   const toggleNavbar = () => {
     setNavbar((prevState) => !prevState)
   }
-
+  
   return (
     <div className="App">
       <div>
