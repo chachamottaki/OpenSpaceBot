@@ -24,6 +24,10 @@ body {
     position: absolute;
     left: 55%
 }
+.package-weight{
+    position: absolute;
+    left: 70%
+}
 .battery-state {
     position: absolute;
     right: 2%;

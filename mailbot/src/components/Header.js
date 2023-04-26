@@ -7,10 +7,13 @@ function Header({openNavbar}) {
   const [botState, setBotState] = useState("");
   const [batteryState, setBatteryState] = useState("");
   const [botLocation, setBotLocation] = useState("");
+  const [packageWeight, setpackageWeight] = useState("");
   useEffect(() => {
+  
     fetch("http://localhost:8000/botState")
     .then((res) => res.json())
-    .then((data) => setBotState(data.botState));
+    .then((data) => setBotState(data.botState)
+     );
 
     fetch("http://localhost:8000/batteryState")
     .then((res) => res.json())
@@ -19,6 +22,10 @@ function Header({openNavbar}) {
     fetch("http://localhost:8000/botLocation")
     .then((res) => res.json())
     .then((data) => setBotLocation(data.botLocation));
+
+    fetch("http://localhost:8000/package")
+    .then((res) => res.json())
+    .then((data) => setpackageWeight(data.packageWeight));
   }, []);
 
   return (
@@ -30,6 +37,7 @@ function Header({openNavbar}) {
 
         <div className='bot-state'> STATE : {botState} </div>
         <div className='bot-location'> Location: {botLocation} </div>
+        <div className='package-weight'> package: {packageWeight} kg </div>
         <div className='battery-state'> Battery : {batteryState}%</div>
 
     </div>
