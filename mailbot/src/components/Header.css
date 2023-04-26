@@ -28,6 +28,10 @@ body {
     position: absolute;
     left: 70%
 }
+.dest-state {
+    position: absolute;
+    right: 78%;
+}
 .battery-state {
     position: absolute;
     right: 2%;

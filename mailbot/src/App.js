@@ -8,17 +8,9 @@ import Send from "./pages/Send"
 
 import Header from './components/Header';
 import NavBar from './components/NavBar';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 
 function App(){
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      window.location.reload();
-    }, 5000); // Refresh the page every 3 seconds
-
-    return () => clearInterval(intervalId); // Clear interval on unmount
-  }, []);
 
   const[navbar, setNavbar] = useState(false);
 
