@@ -33,8 +33,12 @@ function Send() {
   }, []);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modal2IsOpen, setModal2IsOpen] = useState(false);
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+  const closeModal2 = () => {
+    setModal2IsOpen(false);
   };
 
   function SendFunction(){
@@ -47,6 +51,7 @@ function Send() {
       const body = {Desk: desk}
       axios.post(baseUrl,body)
       .then(res=> console.log(res))
+      setModal2IsOpen(true);
     }
   }
   return (
@@ -56,11 +61,15 @@ function Send() {
         <form className='callpage-container'>
           <label>
           Insert your colleague's desk number to send the MailBot:<br></br>
-            <input type="text" name ="Desk" onChange={handleChange}/>
+            <input type="text" name ="Desk" onChange={handleChange} required/>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={modalStyles}>
             <h2>Hello!</h2>
             <p>Unfortunately, our mailbot is busy at the moment, please try again later.</p>
             <button onClick={closeModal}>Close</button>
+            </Modal>
+            <Modal isOpen={modal2IsOpen} onRequestClose={closeModal2} style={modalStyles}>
+            <h2>Hello!</h2>
+            <p>Request sent. The robot will be sent to the specified desk.</p>
             </Modal>
           </label>
           <br></br>
