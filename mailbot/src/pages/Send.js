@@ -6,6 +6,16 @@ import Modal from 'react-modal';
 const baseUrl = "http://127.0.0.1:8000"
 
 function Send() {
+  const modalStyles = {
+    content: {
+      width: '40%',
+      height: '20%',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
+    }
+  }
+
   const[desk,setValue] = useState(0)
   const handleChange = (event) => {
     setValue(event.target.value)
@@ -28,7 +38,7 @@ function Send() {
   };
 
   function SendFunction(){
-    if(botState == "busy"){
+    if(botState === "busy"){
       //display error message
       setModalIsOpen(true);
     }
@@ -47,7 +57,7 @@ function Send() {
           <label>
           Insert your colleague's desk number to send the MailBot:<br></br>
             <input type="text" name ="Desk" onChange={handleChange}/>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={modalStyles}>
             <h2>Hello!</h2>
             <p>Unfortunately, our mailbot is busy at the moment, please try again later.</p>
             <button onClick={closeModal}>Close</button>

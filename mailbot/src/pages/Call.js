@@ -2,7 +2,15 @@ import React, { useState, useEffect } from 'react'
 import '.././App.css'
 import axios from "axios"
 import Modal from 'react-modal';
-
+const modalStyles = {
+  content: {
+    width: '40%',
+    height: '20%',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
+  }
+}
 const baseUrl = "http://127.0.0.1:8000"
 function Call() {
   const[desk,setValue] = useState(0)
@@ -27,7 +35,7 @@ function Call() {
   };
 
   function CallFunction(){
-    if(botState == "busy"){
+    if(botState === "busy"){
       setModalIsOpen(true);
     }
     else{
@@ -45,10 +53,9 @@ function Call() {
           <label>
             Insert your desk number to call the MailBot:<br></br>
             <input type="text" name ="Desk" onChange={handleChange}/>
-            <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
+            <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={modalStyles}>
             <h2>Hello!</h2>
             <p>Unfortunately, our mailbot is busy at the moment, please try again later.</p>
-            <button onClick={closeModal}>Close</button>
             </Modal>
           </label>
           <br></br>
