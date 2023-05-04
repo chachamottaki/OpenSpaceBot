@@ -17,17 +17,30 @@ function Send() {
   }
 
   const[desk,setValue] = useState(0)
+  const [botLocation, setBotLocation] = useState("");
+  const [packageWeight, setpackageWeight] = useState("");
+  const [dest, setDest] = useState("");
+  const [botState, setBotState] = useState("");
   const handleChange = (event) => {
     setValue(event.target.value)
   }
-
-  const [botState, setBotState] = useState("");
   useEffect(() => {
     const intervalId = setInterval(() => {
         fetch("http://localhost:8000/botState")
         .then((res) => res.json())
-        .then((data) => setBotState(data.botState)
-        );
+        .then((data) => setBotState(data.botState));
+
+        fetch("http://localhost:8000/botLocation")
+        .then((res) => res.json())
+        .then((data) => setBotLocation(data.botLocation));
+
+        fetch("http://localhost:8000/package")
+        .then((res) => res.json())
+        .then((data) => setpackageWeight(data.packageWeight));
+
+        fetch("http://localhost:8000/dest")
+        .then((res) => res.json())
+        .then((data) => setDest(data.destination));
       }, 1000); // Refresh the page every second
       return () => clearInterval(intervalId); // Clear interval on unmount
   }, []);
@@ -59,9 +72,16 @@ function Send() {
       <h1>Send</h1>
       <div className='center-container'>
         <form className='callpage-container'>
+          <div className='states'>
+              <div className='bot-state'> <b>State of the robot : {botState} </b></div>
+              <div className='bot-location'> <b>Location of the robot: {botLocation}</b> </div>
+              <div className='package-weight'> <b>Weight of the package: {packageWeight} g </b></div>
+              <div className='dest-state'> <b> Destination: {dest} </b></div>
+          </div>
+          <br></br>
           <label>
           Insert your colleague's desk number to send the MailBot:<br></br>
-            <input type="text" name ="Desk" onChange={handleChange} required/>
+            <input type="number" name ="Desk" onChange={handleChange} required/>
             <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={modalStyles}>
             <h2>Hello!</h2>
             <p>Unfortunately, our mailbot is busy at the moment, please try again later.</p>
@@ -72,7 +92,7 @@ function Send() {
             <p>Request sent. The robot will be sent to the specified desk.</p>
             </Modal>
           </label>
-          <br></br>
+          
         </form>
       </div>
       <button value="Send" className='sendbutton' onClick={SendFunction}>Send Mailbot</button>
