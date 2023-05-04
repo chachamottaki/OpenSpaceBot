@@ -6,9 +6,7 @@ import { useState, useEffect } from 'react';
 function Header({openNavbar}) {
   const [botState, setBotState] = useState("");
   const [batteryState, setBatteryState] = useState("");
-  const [botLocation, setBotLocation] = useState("");
-  const [packageWeight, setpackageWeight] = useState("");
-  const [dest, setDest] = useState("");
+
   useEffect(() => {
     
     const intervalId = setInterval(() => {
@@ -21,18 +19,7 @@ function Header({openNavbar}) {
         .then((res) => res.json())
         .then((data) => setBatteryState(data.batteryState));
 
-        fetch("http://localhost:8000/botLocation")
-        .then((res) => res.json())
-        .then((data) => setBotLocation(data.botLocation));
-
-        fetch("http://localhost:8000/package")
-        .then((res) => res.json())
-        .then((data) => setpackageWeight(data.packageWeight));
-
-        fetch("http://localhost:8000/dest")
-        .then((res) => res.json())
-        .then((data) => setDest(data.destination));
-      }, 1000); // Refresh the page every 5 seconds
+      }, 1000); // Refresh the page every second
 
 
       return () => clearInterval(intervalId); // Clear interval on unmount
@@ -46,13 +33,8 @@ function Header({openNavbar}) {
           <MenuLineIcon color="#fff" />
         </div>
         <div className='title'> Mailing Robot </div>
-
         <div className='bot-state'> STATE : {botState} </div>
-        <div className='bot-location'> Location: {botLocation} </div>
-        <div className='package-weight'> package: {packageWeight} g </div>
         <div className='battery-state'> Battery : {batteryState}%</div>
-        <div className='dest-state'> Destination: {dest} </div>
-
     </div>
   )
 }

@@ -10,61 +10,20 @@ body {
     font-weight: bold;
     font-size: large;
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
-
+}
+.bot-state {
+    margin-left:5%;
+    margin-right:5%;
 }
 
-/* styles for devices with a min width of 768px */
-@media (min-width: 1330px) {
-    .bot-state {
-        position: absolute;
-        left: 35%
-    }
-    .bot-location {
-        position: absolute;
-        left: 55%
-    }
-    .package-weight{
-        position: absolute;
-        left: 70%
-    }
-    .dest-state {
-        position: absolute;
-        right: 78%;
-    }
-    .battery-state {
-        position: absolute;
-        right: 2%;
-    }
+.battery-state {
+    margin-left:5%;
+    margin-right:5%;
+}
 
-  }
-
-/* styles for devices with a max width of 480px */
-@media (max-width: 600px) {
-    .dest-state {
-        position: absolute;
-        left: 30%;
-    }
-    .bot-state {
-        position: absolute;
-        left: 35%
-    }
-    .bot-location {
-        position: absolute;
-        left: 55%
-    }
-    .package-weight{
-        position: absolute;
-        left: 70%
-    }
-    
-    .battery-state {
-        position: absolute;
-        right: 2%;
-    }
-
-  }
 
 
