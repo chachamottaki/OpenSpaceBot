@@ -67,6 +67,24 @@ h1{
   border-radius: 15px;
 }
 
+.states {
+  border: solid 2px #1e5d88;
+  padding: 10%;
+  font-size: 16px;
+  color:#1e5d88
+}
+/* .dest-state {
+  
+}
+.bot-state {
+  
+}
+.bot-location {
+  
+}
+.package-weight{
+  
+} */
 
 .App-logo {
   height: 40vmin;
